@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>cards: not yet prfected</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                width: 100vw;
+                height: 100vh;
+                display: grid;
+                place-items: center;
+            }
+
+            .container {
+                width: 10rem;
+                height: 14rem;
+                position: relative;
+            }
+
+            .card {
+                background-color: red;
+                position: absolute;
+                width: 10rem;
+                height: 14rem;
+                background: var(--g);
+                border: 2px solid black;
+                transform-origin: bottom;
+                z-index: attr(position);
+                transition: transform 700ms;
+            }
+
+            .container:hover .card {
+                transform-origin: bottom;
+                transform: rotate(var(--angle));
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div
+                class="card"
+                angle="-25"
+                style="--g: #38e4d0; --angle: -25deg"
+            ></div>
+            <div
+                class="card"
+                angle="-15"
+                style="--g: #f3ffe3; --angle: -15deg"
+            ></div>
+            <div
+                class="card"
+                angle="-5"
+                style="--g: #eed85d; --angle: -5deg"
+            ></div>
+            <div
+                class="card"
+                angle="5"
+                style="--g: #315ae0; --angle: 5deg"
+            ></div>
+            <div
+                class="card"
+                angle="15"
+                style="--g: #56ff59; --angle: 15deg"
+            ></div>
+        </div>
+        <script>
+            let cards = document.querySelectorAll(".card");
+            cards.forEach((element) => {
+                element.addEventListener("click", () => {
+                    if (element.getAttribute("angle") == "15") {
+                        cards.forEach((item) => {
+                            x = item.getAttribute("style") + "";
+                            y = element.getAttribute("style") + "";
+                            item.style =
+                                x.slice(0, x.indexOf(";") + 1) +
+                                `--angle: ${
+                                    parseInt(item.getAttribute("angle")) + 10
+                                }deg`;
+                            item.setAttribute(
+                                "angle",
+                                `${parseInt(item.getAttribute("angle")) + 10}`
+                            );
+                            element.setAttribute("angle", `-25`);
+                            element.style =
+                                y.slice(0, y.indexOf(";") + 1) +
+                                `--angle: -25deg`;
+                            element.style =
+                                y.slice(0, y.indexOf(";") + 1) +
+                                `--angle: -25deg`;
+
+                            item.style.zIndex = `${item.getAttribute("angle")}`;
+                            element.style.zIndex = "-25";
+                        });
+                    }
+                    setInterval(() => {}, 1000);
+                });
+            });
+        </script>
+    </body>
+</html>
