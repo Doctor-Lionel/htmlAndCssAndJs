@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    user-select: none;
+}
+
+::selection {
+    background-color: rgb(127, 197, 255);
+    color: black;
+}
+
+main {
+    background-image: url(../assets/bg.jpg);
+    height: 100dvh;
+    width: 100dvw;
+    background-size: cover;
+    display: grid;
+}
+
+.container {
+    height: 800px;
+    width: 500px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 100px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline;
+    /* margin: 0 163px; */
+}
+
+.text-1 {
+    font-size: 150px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.text-2-a {
+    font-size: 12px;
+}
+
+.text-2-b {
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 35px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input[type="radio"] {
+    accent-color: rgb(0, 110, 255);
+    width: 20px;
+    height: 20px;
+}
+
+input:not([type="radio"]) {
+    width: 330px;
+    height: 66px;
+    border-radius: 4ch;
+    background-color: transparent;
+    border: 1px solid rgb(218, 243, 255);
+    margin: 10px 0;
+    padding: 3ch;
+    color: white;
+    font-size: 20px;
+    user-select: text;
+}
+
+input:not([type="radio"]):focus {
+    outline: none;
+    border: 1px solid cyan;
+}
+
+::placeholder {
+    color: rgb(218, 243, 255);
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    background-color: #bf9f62;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    margin: auto;
+    cursor: pointer;
+}
+
+button span {
+    font-size: 20px;
+}
+
+button svg {
+    width: 25px;
+    height: 25px;
+}
+
+.forget {
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.forget:hover {
+    color: rgb(151, 165, 255);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100dvw;
+    text-align: center;
+    background-color: #332252;
+    font-size: 14px;
+    padding: 10px;
+    font-weight: 600;
+}
